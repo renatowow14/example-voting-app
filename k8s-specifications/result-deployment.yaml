@@ -4,6 +4,7 @@ metadata:
   labels:
     app: result
   name: result
+  namespace: producao
 spec:
   replicas: 1
   selector:
@@ -15,8 +16,8 @@ spec:
         app: result
     spec:
       containers:
-      - image: dockersamples/examplevotingapp_result
-        name: result
-        ports:
-        - containerPort: 80
+        - image: kodekloud/examplevotingapp_result:v1
           name: result
+          ports:
+            - containerPort: 80
+              name: result
